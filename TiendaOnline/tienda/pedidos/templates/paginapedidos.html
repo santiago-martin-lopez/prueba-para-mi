@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% load static %}
+{% block tituloprincipal %}
+
+{% endblock tituloprincipal %}
+{% block titulo1 %}
+<h1>pagina de pedidos actuales</h1>
+<br>
+<br>
+<h3>aqui podras cargar los pedidos en tramite</h3>
+<br>
+<hr>
+{% endblock titulo1 %}
+{% block contenido1 %}
+<section style="background-color: rgb(183, 110, 183);">
+    <article>
+        <h3>carga los pedidos mediante este formulario!</h3>
+        <form action="{% url 'pedidos' %}" method='POST'>{% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+            <input type="submit" value="cargar pedido">
+        </form>
+    </article>
+</section>
+{% endblock contenido1 %}

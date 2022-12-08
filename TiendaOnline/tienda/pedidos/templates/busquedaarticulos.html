@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% load static %}
+{% block tituloprincipal %}
+<h2>pagina de busqueda de articulos</h2>
+{% endblock tituloprincipal %}
+{% block titulo1 %}
+<h3>aqui podras buscar articulos</h3>
+{% endblock titulo1 %}
+{% block contenido1 %}
+<section>
+    <article>
+        <form action="{% url 'resultadosarticulos' %}" method="GET">
+            <label>busca articulos por su categoria  </label>
+            <input type="text" name="categoria_articulo" id="categoria_articulo">
+            <input type="submit" value="buscar">
+        </form>
+        <p>{{mensaje}}</p>
+    </article>
+
+</section>
+{% endblock contenido1 %}

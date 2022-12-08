@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block titulo1 %}
+<h1>bienvenidos </h1>
+<br>
+<p>aqui podras ingresar y/o modificar clientes,pedidos y articulos</p>
+{% endblock titulo1 %}
+{% block contenido1 %}
+<section style="background-color:rgb(136, 210, 210) ;color:rgb(222, 222, 204)">
+    <article>
+        <h2>{{mensaje}}</h2>
+        <h3>no olvides de hacer tus busquedas a traves de la url</h3>
+        <br>
+        <hr>
+        <section>
+            <article>
+                <a class="btn btn-primary" href="{% url 'busquedaclientes' %}">busque clientes a traves de la url</a>
+                <a class="btn btn-primary" href="{% url 'busquedaarticulos' %}">busque articulos a traves de la url</a>
+
+            </article>
+        </section>
+    </article>
+</section>
+{% endblock contenido1 %}

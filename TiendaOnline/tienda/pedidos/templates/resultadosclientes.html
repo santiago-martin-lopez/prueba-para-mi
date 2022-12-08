@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% load static %}
+{% block tituloprincipal %}
+
+{% endblock tituloprincipal %}
+{% block titulo1 %}
+<h1>aqui veras los resultados de la busqueda de clientes a traves de la URL</h1>
+{% endblock titulo1 %}
+{% block contenido1 %}
+{% if clientes %}
+<ul>
+    {% for elemento in clientes %}
+    <li>{{elemento.nombre_cliente}}</li>
+    <li>{{elemento.email_cliente}}</li>
+    <br>
+    {% endfor %}
+    {% else %}
+    <p>no hay datos para mostrar</p>
+    {% endif %}
+</ul>
+{% endblock contenido1 %}

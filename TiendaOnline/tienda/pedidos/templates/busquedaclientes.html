@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% load static %}
+{% block tituloprincipal %}
+
+{% endblock tituloprincipal %}
+{% block titulo1 %}
+<h1>Busqueda de clientes</h1>
+<br>
+<br>
+<hr>
+<h3>aqui podras realizar la busqueda de clientes a traves del metodo POST</h3>
+{% endblock titulo1 %}
+{% block contenido1 %}
+<section>
+    <article>
+        <form action="{% url 'resultadosclientes' %}" method="GET">
+            <input type="text" name="nombre_cliente" id="nombre_cliente">
+            <input type="submit" value="buscar">
+        </form>
+        <p>{{mensaje}}</p>
+    </article>
+
+</section>
+{% endblock contenido1 %}

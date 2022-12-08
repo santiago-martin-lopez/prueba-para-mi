@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block tituloprincipal %}
+
+{% endblock tituloprincipal %}
+{% block titulo1 %}
+<h1>pagina clientes</h1>
+<br>
+<br>
+<h3>aqui podras cargar a tus clientes mediante un formulario</h3>
+<br>
+<hr>
+{% endblock titulo1 %}
+{% block contenido1 %}
+
+<section style="background-color:rgb(104, 99, 99) ;">
+    <article>
+        <h3>carga a tus clientes mediante este formulario!</h3>
+        <form action="{% url 'clientes' %}" method='POST'>{% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+            <input type="submit" value="cargar cliente">
+        </form>
+    </article>
+</section>
+{% endblock contenido1 %}

@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% load static %}
+{% block tituloprincipal %}
+
+{% endblock tituloprincipal %}
+{% block titulo1 %}
+<h1>aqui veras los resultados de la busqueda de articulos a traves de la URL</h1>
+{% endblock titulo1 %}
+{% block contenido1 %}
+{% if articulos %}
+<ul>
+    {% for elemento in articulos %}
+    <li>{{elemento.categoria_articulo}}</li>
+    <li>{{elemento.nombre_articulo}}</li>
+    <br>
+    {% endfor %}
+    {% else %}
+    <p>no hay datos para mostrar</p>
+    {% endif %}
+</ul>
+{% endblock contenido1 %}
